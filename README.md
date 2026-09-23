@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CesarPortafolio
 
-## Getting Started
+Portafolio profesional de **César Daniel Elías Villanueva**, desarrollado con Next.js y desplegado en Vercel.
 
-First, run the development server:
+Módulo 3.8 · Proyecto Innovador de Desarrollo de Software · 3.er año de Bachillerato de Software
+Colegio Español Padre Arrupe · Docente: Daniel Sosa
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Guía 1:** Portafolio profesional con Next.js
+- **Guía 2:** Despliegue de aplicaciones en Vercel
+
+## Tecnologías
+
+| | |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Lenguaje | TypeScript |
+| Estilos | Tailwind CSS 4 |
+| Despliegue | Vercel (despliegue automático desde `main`) |
+
+## Estructura
+
+```
+app/
+├── layout.tsx                Layout compartido: metadatos, fuentes, Navbar y Footer
+├── page.tsx                  Página principal (/)
+├── proyectos/[slug]/page.tsx Ruta dinámica: detalle de cada proyecto (/proyectos/obracheck, ...)
+├── not-found.tsx             Página 404
+├── icon.svg                  Ícono del sitio
+└── globals.css               Estilos globales y tema
+components/
+├── Navbar.tsx                Client Component (menú móvil con useState)
+├── ExploradorProyectos.tsx   Client Component (filtro de proyectos por categoría)
+├── TarjetaProyecto.tsx       Server Component
+├── TituloSeccion.tsx
+├── Footer.tsx
+└── Iconos.tsx
+data/
+├── perfil.ts                 Datos personales, habilidades y formación (tipados)
+└── proyectos.ts              Interfaz Proyecto y lista de proyectos
+public/
+└── perfil.jpg
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Conceptos de la guía aplicados
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **App Router:** cada `page.tsx` dentro de `app/` es una ruta.
+- **Server y Client Components:** todo es de servidor por defecto; solo `Navbar` y `ExploradorProyectos` usan `"use client"` porque necesitan estado.
+- **Rutas dinámicas:** `app/proyectos/[slug]` genera una página por proyecto con `generateStaticParams` (generación estática en el build).
+- **TypeScript:** interfaces `Proyecto`, `Perfil`, `GrupoHabilidad` y `Etapa`.
+- **Optimización:** `next/image` para la foto de perfil y `next/font` para la tipografía Geist.
+- **Metadatos:** título y descripción por página con `metadata` y `generateMetadata`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Ejecutar en local
 
-## Learn More
+```bash
+npm install
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+Abrir <http://localhost:3000>.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build   # construir para producción
+npm run start   # ejecutar el build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Despliegue
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Cada `git push` a la rama `main` dispara un nuevo build y despliegue en Vercel.
