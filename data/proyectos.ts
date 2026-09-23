@@ -12,6 +12,7 @@ export interface Proyecto {
   categorias: Categoria[];
   anio: number;
   repositorio?: string;
+  sitio?: string;
   destacado?: boolean;
 }
 
@@ -75,6 +76,7 @@ export const proyectos: Proyecto[] = [
     categorias: ["Web"],
     anio: 2026,
     repositorio: "https://github.com/Cdanielnam/modulo239",
+    sitio: "https://modulo239.vercel.app",
   },
   {
     slug: "mangoworld",

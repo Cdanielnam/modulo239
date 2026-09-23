@@ -2,6 +2,8 @@
 
 Portafolio profesional de **César Daniel Elías Villanueva**, desarrollado con Next.js y desplegado en Vercel.
 
+**Sitio publicado:** https://modulo239.vercel.app
+
 Módulo 3.8 · Proyecto Innovador de Desarrollo de Software · 3.er año de Bachillerato de Software
 Colegio Español Padre Arrupe · Docente: Daniel Sosa
 
@@ -15,7 +17,7 @@ Colegio Español Padre Arrupe · Docente: Daniel Sosa
 | Framework | Next.js 16 (App Router, Turbopack) |
 | Lenguaje | TypeScript |
 | Estilos | Tailwind CSS 4 |
-| Despliegue | Vercel (pendiente) |
+| Despliegue | Vercel (despliegue automático desde `main`) |
 
 ## Estructura
 
@@ -72,5 +74,5 @@ npm run start   # ejecutar el build
 
 ## Despliegue
 
-Pendiente: conectar este repositorio con Vercel (Import → preset Next.js → Deploy). Una vez conectado,
-cada `git push` a la rama `main` disparará un nuevo build y despliegue.
+El repositorio está conectado a Vercel: cada `git push` a la rama `main` dispara un nuevo build y un nuevo
+despliegue de producción en https://modulo239.vercel.app.

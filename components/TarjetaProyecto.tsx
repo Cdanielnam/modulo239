@@ -39,16 +39,28 @@ export default function TarjetaProyecto({ proyecto }: { proyecto: Proyecto }) {
           Ver detalle <IconoFlecha />
           <span className="absolute inset-0" aria-hidden="true" />
         </Link>
-        {proyecto.repositorio && (
-          <a
-            href={proyecto.repositorio}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="relative z-10 ml-auto inline-flex items-center gap-1.5 text-slate-400 hover:text-white"
-          >
-            <IconoGitHub className="size-4" /> Código
-          </a>
-        )}
+        <div className="ml-auto flex items-center gap-4">
+          {proyecto.sitio && (
+            <a
+              href={proyecto.sitio}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 inline-flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300"
+            >
+              <span className="size-1.5 rounded-full bg-emerald-400" aria-hidden="true" /> En vivo
+            </a>
+          )}
+          {proyecto.repositorio && (
+            <a
+              href={proyecto.repositorio}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative z-10 inline-flex items-center gap-1.5 text-slate-400 hover:text-white"
+            >
+              <IconoGitHub className="size-4" /> Código
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );

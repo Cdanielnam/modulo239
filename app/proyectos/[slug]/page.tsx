@@ -81,6 +81,16 @@ export default async function PaginaProyecto(props: PageProps<"/proyectos/[slug]
               <IconoGitHub /> Ver código en GitHub
             </a>
           )}
+          {proyecto.sitio && (
+            <a
+              href={proyecto.sitio}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/15 px-5 py-3 font-medium text-white transition hover:border-white/40 hover:bg-white/5"
+            >
+              Ver sitio publicado <IconoFlecha />
+            </a>
+          )}
           <Link
             href={`/proyectos/${siguiente.slug}`}
             className="ml-auto inline-flex items-center gap-2 text-slate-300 hover:text-white"

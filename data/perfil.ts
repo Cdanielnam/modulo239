@@ -6,6 +6,7 @@ export interface Perfil {
   correo: string;
   github: string;
   repositorio: string;
+  sitio: string;
   colegio: string;
 }
 
@@ -17,6 +18,7 @@ export const perfil: Perfil = {
   correo: "cesarelias0207@gmail.com",
   github: "https://github.com/Cdanielnam",
   repositorio: "https://github.com/Cdanielnam/modulo239",
+  sitio: "https://modulo239.vercel.app",
   colegio: "Colegio Español Padre Arrupe",
 };
 
