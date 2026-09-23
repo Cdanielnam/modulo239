@@ -15,7 +15,7 @@ Colegio Español Padre Arrupe · Docente: Daniel Sosa
 | Framework | Next.js 16 (App Router, Turbopack) |
 | Lenguaje | TypeScript |
 | Estilos | Tailwind CSS 4 |
-| Despliegue | Vercel (despliegue automático desde `main`) |
+| Despliegue | Vercel (pendiente) |
 
 ## Estructura
 
@@ -39,6 +39,7 @@ data/
 └── proyectos.ts              Interfaz Proyecto y lista de proyectos
 public/
 └── perfil.jpg
+docs/                         Documento de las guías 1 y 2 y capturas de pantalla
 ```
 
 ## Conceptos de la guía aplicados
@@ -64,6 +65,12 @@ npm run build   # construir para producción
 npm run start   # ejecutar el build
 ```
 
+## Documentación de las guías
+
+- [Guias_3.8_G1_G2_CesarElias.pdf](docs/Guias_3.8_G1_G2_CesarElias.pdf) (también en [.docx](docs/Guias_3.8_G1_G2_CesarElias.docx))
+- Capturas de pantalla de cada paso: [docs/capturas](docs/capturas)
+
 ## Despliegue
 
-Cada `git push` a la rama `main` dispara un nuevo build y despliegue en Vercel.
+Pendiente: conectar este repositorio con Vercel (Import → preset Next.js → Deploy). Una vez conectado,
+cada `git push` a la rama `main` disparará un nuevo build y despliegue.
